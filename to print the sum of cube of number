@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+//decleration of variables
+    int i,r,sum;
+    printf("enter the number");
+    scanf("%d",&i);
+    while(i>0)//initiallisation of loop
+    {
+        r=i%10;
+        sum=sum+r*r*r;
+        i=i/10;
+    }
+    printf("%d",sum);
+    getch();
+}
