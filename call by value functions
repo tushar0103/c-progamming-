@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<conio.h>
+//sum of two numbers using call by vlaue function
+
+int sum(int a, int b)
+{
+    return a+b;
+}
+void main()
+{
+    int a,b,c; 
+    printf("enter the numbers\n");
+    scanf("%d%d",&a,&b);
+
+    c=sum(a,b); //take the return value from sum function
+    
+    printf("sum is %d\n",c);
+    getch();
+}
