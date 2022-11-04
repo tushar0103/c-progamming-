@@ -1,0 +1,36 @@
+#include<stdio.h>
+/*Printing the 2D array matrix and 
+its Diagonal elements*/
+
+int main()
+{
+    int i,j,a[3][3];
+
+    printf("Enter the Array elements:\n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+
+    printf("The required 2d array matrix is:\n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d\t",a[i][j]);
+            if(j==2)
+            {
+                printf("\n");
+            }
+        }   
+    }
+    printf("\nThe diagonal elements of given matrix are:\n");
+    for(j=0;j<3;j++)
+    {
+        printf("%d",a[j][j]);
+    }
+    return 0;
+}
