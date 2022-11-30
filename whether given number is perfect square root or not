@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+int num, value;
+float root;
+printf("enter the number ");
+scanf("%d",&num);
+root=sqrt(num);
+value=root;
+if(value==root)
+printf("the given number is perfect square root ",num);
+else
+printf("the given number is not perfect square root",num);
+getch();
+}
