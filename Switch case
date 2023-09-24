@@ -1,0 +1,127 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
+
+int main() {
+    int n, year;
+    int b,p, powe;
+    int r,op;
+    printf("======optips are===\n");
+    printf("1.prime 2. sum of digit 3. power 4. armstrong 5. palindrome, 6. leap year\n");
+    printf("enter the options\n");
+    scanf("%d",&op);
+    switch(op){
+        case 1:
+        {
+             printf("enter the number\n");
+            scanf("%d",&n);
+            if(is_prime(n)){
+                printf("number is prime");
+            }else{
+                printf("number is not prime");
+            }
+            break;
+        }
+        case 2: {
+            printf("enter the number\n");
+            scanf("%d",&n);
+            r=sum_of_digit(n);
+            printf("the sum of digits are\n",r);
+              break;
+        }
+        case 3:{
+             printf("enter the base and power\n");
+            scanf("%d %d",&b,&p);
+            powe= power( b, p);
+            printf("the power of number is\n ",powe);
+              break;
+        }
+        case 4:{
+             printf("enter the number\n");
+            scanf("%d",&n);
+            if(is_armstrong(n)){
+                printf("amstrong\n");
+            }else{
+                printf("not armstrong\n");
+            }
+              break;
+        }
+        case 5:{
+              printf("enter the number\n");
+            scanf("%d",&n);
+             if(is_palindrome(n)){
+                printf("palindrome\n");
+            }else{
+                printf("not palindrome\n");
+            }
+              break;
+        }
+        case 6:{
+            printf("enter the year\n");
+            scanf("%d",&year);
+            if(is_leap_year(year)){
+                printf("leap year\n");
+            }else{
+                printf("not leap year\n");
+            }
+              break;
+        }
+        case 7:{
+            exit(0);
+        }
+        default:{
+            printf("enter valid option");
+              break;
+        }
+    }
+}
+int (is_prime(int n)){
+    for(int i=0; i<=sqrt(n); i++){
+        if(n%i==0){
+            return 0;
+        }
+    }
+    return n;
+}
+int sum_of_digit(int n){
+    int r, sum;
+    while(n!=0){
+        r=n%10;
+        sum= sum+r;
+        n=n/10;
+    }
+    return sum;
+}
+int power(int b, int p){
+    int ans=0;
+    for(int i=0; i<p; i++){
+        ans= ans*b;
+    }
+    return ans;
+}
+int is_armstrong(int n){
+    int r, sum;
+    while(n>0){
+        r=n%10;
+        sum=sum+(r*r*r);
+        n=n/10;
+    }
+    return sum;
+}
+int is_palindrome(int n){
+    int r,sum=0;
+    while(n>0){
+        r=n%10;
+        sum= (sum*10)+r;
+        n=n/10;
+    }
+    return sum;
+}
+int is_leap_year(int year){
+    if((year%4==0 && year%100==0) || year%400==0){
+        return 1;
+    }else{
+        return 0;
+    }
+}
